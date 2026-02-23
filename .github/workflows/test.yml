@@ -3,14 +3,19 @@ name: Run tests
 on:
     push:
       branches:
-        - sienna/ci
+        - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+
         
 	# your task: figure out the remainings steps 
 	# that match your selected language. 
